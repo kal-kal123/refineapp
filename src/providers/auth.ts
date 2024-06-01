@@ -92,3 +92,5 @@ export const authProvider: any = {
     return { success: false, error: { name: "Authentication Error", message: error } };
   
 }}
+
+export default authProvider
