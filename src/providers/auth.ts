@@ -86,11 +86,7 @@ export const authProvider: AuthProvider = {
   },
 
   // Error handling function
-  onError: ({error}) => {
-   
-    return { success: false, error: { name: "Authentication Error", message: error } };
-  
-}};
+
 
 
 export default authProvider
