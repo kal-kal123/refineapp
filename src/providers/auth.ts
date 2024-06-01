@@ -86,29 +86,10 @@ export const authProvider: AuthProvider = {
   },
 
   // Error handling function
-  onError: (error) => {
-    const errorCode = error.code;
-    let errorMessage;
-
-    switch (errorCode) {
-      case "auth/email-already-in-use":
-        errorMessage = "User already exists";
-        break;
-      case "auth/weak-password":
-        errorMessage = "Password is too weak";
-        break;
-      case "auth/invalid-email":
-        errorMessage = "Invalid email address";
-        break;
-      case "auth/wrong-password":
-        errorMessage = "Incorrect email or password";
-        break;
-      default:
-        errorMessage = "An error occurred. Please try again.";
-    }
-
-    return { success: false, error: { name: "Authentication Error", message: errorMessage } };
-  },
+  onError: ({error}) => {
+   
+    return { success: false, error: { name: "Authentication Error", message: error } };
+  
 };
 
 
