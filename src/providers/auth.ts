@@ -11,7 +11,7 @@ initializeApp(firebaseConfig);
 
 const auth = getAuth();
 
-export const authProvider: AuthProvider = {
+export const authProvider: any = {
   // Login function
   login: async ({ email, password }) => {
     try {
@@ -23,9 +23,7 @@ export const authProvider: AuthProvider = {
       return { success:false,
         error: error};
     }
-  }
-
-}
+  },
 
   // Register function
   register: async ({ email, password }) => {
@@ -88,7 +86,9 @@ export const authProvider: AuthProvider = {
   },
 
   // Error handling function
+  onError: ({error}) => {
+   
 
-
-
-export default authProvider
+    return { success: false, error: { name: "Authentication Error", message: error } };
+  
+}}
