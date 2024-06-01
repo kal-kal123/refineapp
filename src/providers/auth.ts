@@ -23,7 +23,9 @@ export const authProvider: AuthProvider = {
       return { success:false,
         error: error};
     }
-  },
+  }
+
+}
 
   // Register function
   register: async ({ email, password }) => {
