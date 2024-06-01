@@ -90,7 +90,7 @@ export const authProvider: AuthProvider = {
    
     return { success: false, error: { name: "Authentication Error", message: error } };
   
-};
+}};
 
 
 export default authProvider
